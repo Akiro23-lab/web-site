@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- PASO 1: permite que el navegador use el ancho real del celular. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio | Gota a Gota</title>
+  <!-- PASO 2: conectar este HTML con el archivo CSS compartido. -->
+  <link rel="stylesheet" href="css/estilos.css">
+  <!-- Este icono (una gota) aparece en la pestaña del navegador. -->
+  <link rel="icon" type="image/svg+xml" href="iconos/favicon.svg">
+  <!-- defer: el JS se ejecuta cuando el HTML ya está listo. -->
+  <script src="js/menu.js" defer></script>
+</head>
+
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <!-- MENÚ ACME ADAPTADO: sticky en CSS lo mantiene visible al bajar. -->
+  <header class="cabecera">
+    <div class="contenedor barra">
+      <!-- ODS 6: nombre y logotipo del proyecto en lugar de ACME. -->
+      <a class="marca" href="#inicio" aria-label="Gota a Gota, ir al inicio"><img src="iconos/favicon.svg" alt=""
+          width="42" height="42">Gota a Gota</a>
+      <!-- El botón hamburguesa controla la navegación con id="navegacion".
+           Solo se ve en celular (600 px o menos). Un button ya responde a clic, toque, Enter y espacio. -->
+      <button id="boton-menu" class="hamburguesa" type="button" aria-controls="navegacion" aria-expanded="false"
+        aria-label="Abrir menú">
+        <span class="lineas" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span id="texto-menu">Menú</span>
+      </button>
+      <nav id="navegacion" class="navegacion" aria-label="Navegación principal">
+        <!-- Lista horizontal en escritorio y vertical en celular. -->
+        <ul class="menu">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li>
+            <!-- details y summary abren el submenú vertical sin programar otro botón. -->
+            <details id="actuar" class="desplegable">
+              <summary>Actuar</summary>
+              <ul class="submenu">
+                <li><a href="#servicios">Cómo funciona</a></li>
+                <li><a href="#como-ayudar">Cómo ayudar</a></li>
+                <li><a href="#donar">Realizar una donación</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="recursos.html">Video y guía</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="contenido">
+    <!-- PASO 5: hero con el problema y la solución del proyecto (imagen + texto). -->
+    <section id="inicio" tabindex="-1" class="hero contenedor dos-columnas" aria-labelledby="titulo">
+      <div>
+        <p class="etiqueta">Red vecinal por el agua · ODS 6</p>
+        <h1 id="titulo">Cada gota cuenta.<br>Cada aviso, también.</h1>
+        <p>Un caño que gotea o una tubería rota en la calle pueden desperdiciar miles de litros antes de que alguien
+          avise. En Gota a Gota te ayudamos a reconocer el problema, saber qué hacer y reportarlo en pocos pasos.</p>
+        <a class="boton" href="#donar">Quiero Ayudar</a>
+        <a class="enlace" href="recursos.html">Conocer la iniciativa</a>
+      </div>
+      <figure class="postal"><img class="foto" src="imagenes/caño.jpg"
+          alt="Caño que gotea sobre un lavadero y desperdicia agua" width="1000" height="750">
+        <figcaption>El agua que se pierde no vuelve al caño.</figcaption>
+      </figure>
+    </section>
+    <section id="nosotros" tabindex="-1" class="seccion fondo">
+      <div class="contenedor dos-columnas">
+        <img class="foto" src="imagenes/CUIDADO.jpg" alt="Calle de un barrio donde una tubería rota forma un charco"
+          width="1000" height="750" loading="lazy">
+        <div>
+          <p class="etiqueta">Quiénes somos</p>
+          <h2>Vecinos que cuidan el agua de todos.</h2>
+          <p>Gota a Gota es una iniciativa que conecta a vecinos de barrios urbanos con información clara sobre fugas y
+            calidad del agua. Muchas personas notan el problema, pero no saben si es grave, qué hacer primero ni a quién
+            avisar.</p>
+          <h3>Nuestra propuesta</h3>
+          <p>Orientar al vecino según el tipo de problema y simular un reporte ordenado desde una sola web.</p>
+          <p>El proyecto se vincula con el ODS 6: garantizar la disponibilidad de agua y su gestión sostenible y el
+            saneamiento para todos.</p>
+        </div>
+      </div>
+    </section>
+    <section id="servicios" tabindex="-1" class="seccion contenedor">
+      <p class="etiqueta">Cómo funciona</p>
+      <h2>Del “se está perdiendo agua” al “ya avisé”.</h2>
+      <div class="tarjetas">
+        <article class="tarjeta"><span class="numero">01 / Observa</span>
+          <h3>Identifica el problema</h3>
+          <p>Elige qué estás viendo: una fuga en casa, en la calle o agua con color u olor extraño.</p>
+        </article>
+        <article class="tarjeta"><span class="numero">02 / Reporta</span>
+          <h3>Describe dónde ocurre</h3>
+          <p>Prueba un reporte con una referencia de ubicación y un detalle de lo que ves.</p>
+        </article>
+        <article class="tarjeta"><span class="numero">03 / Cuida</span>
+          <h3>Aprende a prevenir</h3>
+          <p>Revisa el video y la guía para entender por qué cada fuga importa.</p>
+        </article>
+      </div>
+    </section>
+    <section id="como-ayudar" tabindex="-1" class="seccion contenedor">
+      <p class="etiqueta">Cómo ayudar</p>
+      <h2>De “quiero ayudar” a “ya ayudé”.</h2>
+      <div class="tarjetas">
+        <article class="tarjeta"><span class="numero">01 / Conoce</span>
+          <h3>Explora dónde trabajamos</h3>
+          <p>Revisa los países y proyectos, cuántas personas se benefician y qué tipo de intervención se realiza.</p>
+        </article>
+        <article class="tarjeta"><span class="numero">02 / Elige</span>
+          <h3>Define tu aporte</h3>
+          <p>Escoge un monto, la moneda y si quieres donar una vez o cada mes.</p><a href="#donar">Elegir monto</a>
+        </article>
+        <article class="tarjeta"><span class="numero">03 / Confirma</span>
+          <h3>Revisa y dona</h3>
+          <p>Confirma el resumen de tu donación y recibe un mensaje de confirmación.</p><a href="#donar">Ir a donar</a>
+        </article>
+      </div>
+    </section>
+    <section id="proyectos" class="seccion contenedor">
+      <p class="etiqueta">Cómo sería el servicio</p>
+      <h2>Un aviso que llega a quien puede ayudar.</h2>
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <h3>Recibimos</h3>
+          <p>La red vecinal reuniría los reportes de un mismo sector para evitar avisos duplicados.</p>
+        </article>
+        <article class="tarjeta">
+          <h3>Ordenamos</h3>
+          <p>Una persona voluntaria revisaría la ubicación y la prioridad de cada reporte.</p>
+        </article>
+        <article class="tarjeta">
+          <h3>Derivamos</h3>
+          <p>El reporte se compartiría con la empresa de agua o el municipio para su atención.</p>
+        </article>
+      </div>
+    </section>
+    <section id="galeria" class="seccion fondo">
+      <div class="contenedor">
+        <h2>El agua que cuidamos es la que compartimos.</h2>
+        <div class="galeria">
+          <figure><img src="imagenes/MALCERRADO.jpg" alt="Gotas cayendo de un caño mal cerrado" width="1000"
+              height="750" loading="lazy">
+            <figcaption>Lo pequeño también se acumula</figcaption>
+          </figure>
+          <figure><img src="imagenes/FUGA.jpg" alt="Tubería con fuga frente a casas de un barrio" width="1000"
+              height="750" loading="lazy">
+            <figcaption>Una fuga en la calle afecta a toda la cuadra</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section id="testimonios" class="seccion contenedor">
+      <blockquote>“Vi el charco en la esquina durante una semana. No sabía a quién avisar, así que no hice nada”.
+      </blockquote>
+      <p>Relato que representa la necesidad del usuario.</p>
+    </section>
+    <section id="donar" tabindex="-1" class="seccion fondo">
+      <div class="contenedor dos-columnas">
+        <div>
+          <p class="etiqueta">HU-002 · Realizar una donación</p>
+          <h2>Tu aporte se convierte en agua segura.</h2>
+          <p>Elige un monto predefinido u otro monto, la moneda y la frecuencia. Antes de donar verás un resumen para
+            confirmarlo.</p>
+          <ul>
+            <li><strong>S/ 20 · US$ 20:</strong> un filtro doméstico de agua.</li>
+            <li><strong>S/ 50 · US$ 50:</strong> un lavamanos escolar.</li>
+            <li><strong>S/ 100 · US$ 100:</strong> un tramo de tubería comunitaria.</li>
+          </ul>
+          <p class="nota">Simulación: no se realizan cobros, no se piden datos bancarios y no se guarda información.</p>
+        </div>
+
+        <fieldset class="donacion">
+          <legend>Panel de donación</legend>
+          <!-- CA01: montos predefinidos y opción de otro monto (mismo name, distintos id). -->
+          <p class="grupo" id="g-monto">1. Monto</p>
+          <input type="radio" name="monto" id="m20"><label for="m20">20</label>
+          <input type="radio" name="monto" id="m50" checked><label for="m50">50</label>
+          <input type="radio" name="monto" id="m100"><label for="m100">100</label>
+          <input type="radio" name="monto" id="motro"><label for="motro">Otro monto</label>
+          <!-- CA01: moneda. -->
+          <p class="grupo">2. Moneda</p>
+          <input type="radio" name="moneda" id="pen" checked><label for="pen">Soles (PEN)</label>
+          <input type="radio" name="moneda" id="usd"><label for="usd">Dólares (USD)</label>
+          <!-- CA01: frecuencia única o mensual. -->
+          <p class="grupo">3. Frecuencia</p>
+          <input type="radio" name="frecuencia" id="unica" checked><label for="unica">Única</label>
+          <input type="radio" name="frecuencia" id="mensual"><label for="mensual">Mensual</label>
+
+          <!-- CA03: resumen de monto, moneda y frecuencia antes de confirmar. -->
+          <div class="resumen" aria-live="polite">
+            <strong>Resumen de tu donación</strong>
+            <dl>
+              <dt>Monto</dt>
+              <dd><span class="r r-m20">20</span><span class="r r-m50">50</span><span class="r r-m100">100</span><span
+                  class="r r-motro" id="resumen-otro">El que escribas en “Otro monto”</span></dd>
+              <dt>Moneda</dt>
+              <dd><span class="r r-pen">Soles (PEN)</span><span class="r r-usd">Dólares (USD)</span></dd>
+              <dt>Frecuencia</dt>
+              <dd><span class="r r-unica">Única</span><span class="r r-mensual">Mensual (cada mes)</span></dd>
+            </dl>
+            <!-- JS (donacion.js): muestra a qué equivale el aporte y el total anual si es mensual. -->
+            <p id="impacto" class="impacto" hidden></p>
+          </div>
+
+          <!-- Formulario para montos predefinidos. -->
+          <form class="form-donar form-fijo" action="confirmacion.html" method="get">
+            <div><input id="confirmo1" type="checkbox" required> <label for="confirmo1">Revisé el resumen y confirmo mi
+                donación de prueba.</label></div>
+            <button type="submit" class="boton">Donar</button>
+          </form>
+
+          <!-- Formulario para "Otro monto". CA02: required + min impiden vacío, 0 o negativo.
+           Sin name: el valor no se agrega a la URL. -->
+          <form class="form-donar form-otro" action="confirmacion.html" method="get">
+            <label for="otro-monto">Escribe tu monto</label>
+            <input id="otro-monto" type="number" required min="1" max="10000" step="1" placeholder="Ejemplo: 35"
+              inputmode="numeric" aria-describedby="error-monto">
+            <p class="error" id="error-monto">Ingresa un monto válido: un número entero mayor que 0 y hasta 10 000.</p>
+            <p class="ok">Monto válido. Revisa el resumen y confirma tu donación.</p>
+            <div><input id="confirmo2" type="checkbox" required> <label for="confirmo2">Revisé el resumen y confirmo mi
+                donación de prueba.</label></div>
+            <button type="submit" class="boton">Donar</button>
+          </form>
+        </fieldset>
+      </div>
+    </section>
+  </main>
+  <!-- PASO FINAL: pie compartido por las páginas del sitio. -->
+  <footer class="pie">
+    <div class="contenedor">
+      <p><strong>Gota a Gota</strong> · Red vecinal por el agua · ODS 6</p>
+      <p>Contacto de ejemplo: hola@ejemplo.org</p>
+      <nav class="redes" aria-label="Redes sociales de referencia">
+        <!-- Son páginas generales de las redes; reemplazar por cuentas del proyecto. -->
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img src="iconos/facebook.svg"
+            alt="" width="24" height="24">Facebook</a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img src="iconos/instagram.svg"
+            alt="" width="24" height="24">Instagram</a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><img src="iconos/youtube.svg"
+            alt="" width="24" height="24">YouTube</a>
+      </nav>
+      <p>© 2026 Gota a Gota · Proyecto académico · <a href="FUENTES.txt">Créditos de recursos</a></p>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- PASO 1: permite que el navegador use el ancho real del celular. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio | Gota a Gota</title>
+  <!-- PASO 2: conectar este HTML con el archivo CSS compartido. -->
+  <link rel="stylesheet" href="css/estilos.css">
+  <!-- Este icono (una gota) aparece en la pestaña del navegador. -->
+  <link rel="icon" type="image/svg+xml" href="iconos/favicon.svg">
+  <!-- defer: el JS se ejecuta cuando el HTML ya está listo. -->
+  <script src="js/menu.js" defer></script>
+
+</head>
+
+
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <!-- PASO 3: este header permanece visible con position: sticky en CSS. -->
+  <header class="cabecera">
+    <div class="contenedor barra">
+      <!-- ODS 6: nombre y logotipo del proyecto en lugar de ACME. -->
+      <a class="marca" href="#inicio" aria-label="Gota a Gota, ir al inicio"><img src="iconos/favicon.svg" alt=""
+          width="42" height="42">Gota a Gota</a>
+      <!-- El botón hamburguesa controla la navegación con id="navegacion".
+           Solo se ve en celular (600 px o menos). Un button ya responde a clic, toque, Enter y espacio. -->
+      <button id="boton-menu" class="hamburguesa" type="button" aria-controls="navegacion" aria-expanded="false"
+        aria-label="Abrir menú">
+        <span class="lineas" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span id="texto-menu">Menú</span>
+      </button>
+      <nav id="navegacion" class="navegacion" aria-label="Navegación principal">
+        <!-- Lista horizontal en escritorio y vertical en celular. -->
+        <ul class="menu">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li>
+            <!-- details y summary abren el submenú vertical sin programar otro botón. -->
+            <details id="actuar" class="desplegable">
+              <summary>Actuar</summary>
+              <ul class="submenu">
+                <li><a href="#servicios">Cómo funciona</a></li>
+                <li><a href="#como-ayudar">Cómo ayudar</a></li>
+                <li><a href="#donar">Realizar una donación</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="recursos.html">Video y guía</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="contenido" class="contenedor seccion">
+    <section class="confirmacion" aria-labelledby="confirmado">
+      <!-- HU-002 CA03 / Escenario 1: confirmación visible al completar la donación. -->
+      <p class="etiqueta">Final de la demostración</p>
+      <p class="sello">✓ Donación de prueba realizada</p>
+      <h1 id="confirmado">¡Gracias! Tu donación fue realizada correctamente.</h1>
+      <p>Así se vería la confirmación de una donación. En un servicio real recibirías un comprobante y, si elegiste la
+        frecuencia mensual, un recordatorio cada mes.</p>
+      <p>Este es un mensaje fijo de prueba. No se realizó ningún cobro, no se guardó información ni se envió un correo.
+      </p>
+      <h2>¿Quieres repetir el recorrido?</h2>
+      <p>Vuelve al orientador para probar otro tipo de problema o regresa al formulario.</p><a class="boton"
+        href="index.html#orientador">Volver al recorrido</a><a class="enlace" href="index.html#donar">Realizar otra donación</a>
+    </section>
+  </main>
+  <!-- PASO FINAL: pie compartido por las páginas del sitio. -->
+  <footer class="pie">
+    <div class="contenedor">
+      <p><strong>Gota a Gota</strong> · Red vecinal por el agua · ODS 6</p>
+      <p>Contacto de ejemplo: hola@ejemplo.org</p>
+      <nav class="redes" aria-label="Redes sociales de referencia">
+        <!-- Son páginas generales de las redes; reemplazar por cuentas del proyecto. -->
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img src="iconos/facebook.svg"
+            alt="" width="24" height="24">Facebook</a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img src="iconos/instagram.svg"
+            alt="" width="24" height="24">Instagram</a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><img src="iconos/youtube.svg"
+            alt="" width="24" height="24">YouTube</a>
+      </nav>
+      <p>© 2026 Gota a Gota · Proyecto académico· <a href="FUENTES.txt">Créditos de recursos</a></p>
+    </div>
+  </footer>
+</body>
+
+</html>

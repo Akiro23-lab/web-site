@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- PASO 1: permite que el navegador use el ancho real del celular. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio | Gota a Gota</title>
+  <!-- PASO 2: conectar este HTML con el archivo CSS compartido. -->
+  <link rel="stylesheet" href="css/estilos.css">
+  <!-- Este icono (una gota) aparece en la pestaña del navegador. -->
+  <link rel="icon" type="image/svg+xml" href="iconos/favicon.svg">
+  <!-- defer: el JS se ejecuta cuando el HTML ya está listo. -->
+  <script src="js/menu.js" defer></script>
+
+</head>
+
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+  <!-- MENÚ ACME ADAPTADO: sticky en CSS lo mantiene visible al bajar. -->
+  <header class="cabecera">
+    <div class="contenedor barra">
+      <!-- ODS 6: nombre y logotipo del proyecto en lugar de ACME. -->
+      <a class="marca" href="index.html#inicio" aria-label="Gota a Gota, ir al inicio"><img src="iconos/favicon.svg" alt="" width="42" height="42">Gota a Gota</a>
+      <!-- El botón hamburguesa controla la navegación con id="navegacion".
+           Solo se ve en celular (600 px o menos). Un button ya responde a clic, toque, Enter y espacio. -->
+      <button id="boton-menu" class="hamburguesa" type="button"
+              aria-controls="navegacion" aria-expanded="false" aria-label="Abrir menú">
+        <span class="lineas" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span id="texto-menu">Menú</span>
+      </button>
+      <nav id="navegacion" class="navegacion" aria-label="Navegación principal">
+        <!-- Lista horizontal en escritorio y vertical en celular. -->
+        <ul class="menu">
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li>
+            <!-- details y summary abren el submenú vertical sin programar otro botón. -->
+            <details id="actuar" class="desplegable">
+              <summary>Actuar</summary>
+              <ul class="submenu">
+                <li><a href="index.html#servicios">Cómo funciona</a></li>
+                <li><a href="index.html#como-ayudar">Cómo ayudar</a></li>
+                <li><a href="index.html#donar">Realizar una donación</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="recursos.html">Video y guía</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+<main id="contenido" class="contenedor seccion"><p class="etiqueta">El contexto de nuestra propuesta</p><h1>El agua limpia es un derecho que se cuida entre todos.</h1>
+  <section class="dos-columnas" aria-labelledby="video-titulo"><div>
+    <!-- PASO 9: video de referencia sobre el ODS 6. El enlace alternativo siempre está disponible. -->
+    <iframe
+  class="video"
+  src="https://www.youtube.com/embed/1P7N_GLkz38"
+  title="¿De qué se trata el Objetivo 6: Agua limpia y saneamiento?"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+    <p class="nota">Video: “¿De qué se trata el Objetivo 6 - Agua limpia y saneamiento?”, canal Aprende Sustentabilidad con Karla (YouTube). Es material de referencia sobre el ODS 6; no presenta el servicio ficticio de Gota a Gota.</p><p><a href="https://www.youtube.com/watch?v=1P7N_GLkz38" target="_blank" rel="noopener noreferrer">Abrir el video en YouTube</a> si no se reproduce aquí.</p></div>
+    <div><h2 id="video-titulo">De una fuga en la esquina a una red que cuida el agua</h2><p>El ODS 6 busca que todas las personas tengan acceso a agua segura y saneamiento, y que el agua se use de forma eficiente. Gota a Gota parte de un problema cotidiano: las fugas y el agua de mala calidad se notan, pero no siempre se reportan.</p><ol><li>Identifica qué tipo de problema estás viendo.</li><li>Describe la ubicación y un detalle inventado.</li><li>Observa cómo sería el siguiente paso de un reporte simulado.</li></ol><a class="boton" href="index.html#donar">Probar el recorrido</a></div>
+  </section></main>
+<!-- PASO FINAL: pie compartido por las páginas del sitio. -->
+<footer class="pie">
+  <div class="contenedor">
+    <p><strong>Gota a Gota</strong> · Red vecinal por el agua · ODS 6</p>
+    <p>Contacto de ejemplo: hola@ejemplo.org</p>
+    <nav class="redes" aria-label="Redes sociales de referencia">
+      <!-- Son páginas generales de las redes; reemplazar por cuentas del proyecto. -->
+      <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img src="iconos/facebook.svg" alt="" width="24" height="24">Facebook</a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img src="iconos/instagram.svg" alt="" width="24" height="24">Instagram</a>
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><img src="iconos/youtube.svg" alt="" width="24" height="24">YouTube</a>
+    </nav>
+    <p>© 2026 Gota a Gota · Proyecto académico ficticio · <a href="FUENTES.txt">Créditos de recursos</a></p>
+  </div>
+</footer>
+</body>
+</html>
